@@ -1,7 +1,7 @@
 """
 Authors: Aden Weigle & Gian Carlo
 """
-
+import math
 
 def menu():
     return print("""Menu 
@@ -32,3 +32,11 @@ def encode(password):
         new_password += j
     return print('Your password has been encoded and stored!')
     return new_password
+
+def decode(encoded):
+    decoded = ''
+    for char in encoded:
+        digit = math.fabs(int(char) - 3) % 10
+        decoded = decoded + str(digit)
+    
+    return decoded
